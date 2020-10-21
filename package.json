@@ -6,7 +6,7 @@
   "scripts": {
     "data": "rimraf src/_data && dato dump",
     "start": "rimraf dist && npm run data && eleventy --serve",
-    "build": "eleventy",
+    "build": "rimraf dist && npm run data && eleventy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
