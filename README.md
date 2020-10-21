@@ -1,6 +1,6 @@
 # My own portfolio website
 
-Build with 11ty and DatoCMS
+Build with 11ty and using DatoCMS
 
 ## Build Setup
 
