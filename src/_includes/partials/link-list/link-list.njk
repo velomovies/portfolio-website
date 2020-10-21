@@ -1,0 +1,5 @@
+<ul>
+  {% for name, link in item.linkList %}
+    <li><a href="{{ link }}" rel="noopener noreferrer" target="_blank">{{ name }}</a></li>
+  {%- endfor -%}
+</ul>

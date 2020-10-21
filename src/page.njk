@@ -1,0 +1,28 @@
+---
+layout: default
+pagination:
+  data: info.pages
+  size: 1
+  alias: pageData
+permalink: "{{ pageData.slug | slug }}/"
+eleventyComputed:
+  title: "{{ pageData.title }}"
+  location: "{{ title }}"
+---
+
+<main>
+  {{ pages[pageData.slug].headerText | safe }}
+
+    {% for item in pages[pageData.slug].content %}
+      {% if item.itemType === 'video_list' %}
+        <p>Show videos</p>
+        {% include './_includes/partials/video-list/video-list.njk' %}
+      {% elif item.itemType === 'image_list' %}
+        <p>Show images</p>
+        {% include './_includes/partials/image-list/image-list.njk' %}
+      {% elif item.itemType === 'link_list' %}
+        <p>Show links</p>
+        {% include './_includes/partials/link-list/link-list.njk' %}
+      {% endif %}
+    {% endfor %}
+</main>

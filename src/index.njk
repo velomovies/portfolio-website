@@ -1,0 +1,16 @@
+---
+layout: default
+eleventyComputed:
+  title: "{{ info.name }}"
+  location: Home
+---
+
+<main>
+  <ul>
+    {%- for page in info.pages -%}
+      <li><a href="/{{ page.slug }}">{{ page.title }}</a></li>
+    {%- endfor -%}
+</ul>
+</main>
+
+

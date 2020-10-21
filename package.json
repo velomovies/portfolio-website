@@ -1,0 +1,34 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "My portfolio website",
+  "main": "index.html",
+  "scripts": {
+    "data": "rimraf src/_data && dato dump",
+    "start": "rimraf dist && npm run data && eleventy --serve",
+    "build": "eleventy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/velomovies/portfolio-website.git"
+  },
+  "keywords": [
+    "portfolio",
+    "11ty",
+    "eleventy",
+    "datocms"
+  ],
+  "author": "Velomovies",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/velomovies/portfolio-website/issues"
+  },
+  "homepage": "https://github.com/velomovies/portfolio-website#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "clean-css": "^4.2.3",
+    "datocms-client": "^3.1.1",
+    "fast-glob": "^3.2.4"
+  }
+}

@@ -1,0 +1,47 @@
+{% set cssReset %}
+  {% include '../_global-styles/_reset.css' %}
+{% endset %}
+
+{% set cssVariables %}
+  {% include '../_global-styles/variables.css' %}
+{% endset %}
+
+{% set css %}
+  {% includeAll '_global-styles/*.css' %}
+{% endset %}
+
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <title>{{ info.name }} | {{ location }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="classification" content="{{ info.classification }}">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="Accept-CH" content="DPR, Width, Viewport-Width, Save-Data">
+    <meta name="robots" content="index,follow,noodp">
+    <meta name="googlebot" content="index,follow">
+    <meta name="author" content="{{ info.name }}">
+    <meta name="description" content="{{ info.description }}" />
+    <meta name="keywords" content="{{ info.keywords }}">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="{{ info.description }}">
+    <meta property="og:site_name" content="{{ info.name }}">
+    <meta property="og:url" content="{{ info.url }}">
+    <meta property="og:title" content="{{ info.name }} | {{ location }}">
+    <meta name="twitter:title" content="{{ info.name }} | {{ location }}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:description" content="{{ info.description }}">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <style type="text/css">{% includeAll '_global-styles/*.css' %}</style>
+    <style type="text/css">{% includeAll 'partials/**/*.css' %}</style>
+  </head>
+
+  <body>
+    {% include '../partials/header/header.njk' %}
+    {{ content | safe }}
+    {% include '../partials/footer/footer.njk' %}
+  </body>
+</html>
